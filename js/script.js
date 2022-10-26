@@ -122,3 +122,78 @@ const Poezd = (biletNomer) => {
   }
 };
 Poezd(5);
+
+const objTest = {
+  a: 10,
+  b: 22,
+  c: {
+    o: 11,
+    d: 15,
+  },
+};
+
+const objNew = {
+  f: 88,
+  g: 15,
+  k: 9,
+  q: {
+    p: 3,
+    w: 7,
+  },
+};
+
+Object.assign(objNew, objTest);
+console.log(objNew);
+
+const video = ['youtube', 'vmeo', 'rutube'],
+  blogs = ['wordpress', 'livejournal', 'blogger'],
+  internet = ['lolkek', ...video, ...blogs, 'vk', 'fb'];
+console.log(internet);
+
+const solja = {
+  hp: 400,
+  armor: 150,
+};
+const josh = {
+  hp: 150,
+};
+
+Object.setPrototypeOf(josh, solja);
+console.log(josh.armor);
+const myke = Object.create(solja);
+console.log(myke.armor);
+console.log(myke);
+const students = [
+  'Peter',
+  'Andrew',
+  'Ann',
+  'Mark',
+  'Josh',
+  'Sandra',
+  'Cris',
+  'Bernard',
+  'Takesi',
+  'Sam',
+];
+
+function sortStudentsByGroups(arr) {
+  arr.sort();
+  const a = [],
+    b = [],
+    c = [],
+    rest = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (i < 3) {
+      a.push(arr[i]);
+    } else if (i < 6) {
+      b.push(arr[i]);
+    } else if (i < 9) {
+      c.push(arr[i]);
+    } else {
+      rest.push(arr[i]);
+    }
+  }
+  return [a, b, c, `Оставшиеся студенты: ${rest.length === 0 ? '-' : rest.join(', ')}`];
+}
+console.log(sortStudentsByGroups(students));
